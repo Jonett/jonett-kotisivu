@@ -1,0 +1,61 @@
+body {
+    width: 100%;
+    margin: 0;
+}
+
+:root {
+    --textcolor-primary: black;
+    --textcolor-secondary: red;
+}
+
+.overline {
+    text-decoration: line-through;
+}
+
+/* NAVBAR ASETUKSIA */
+#navbar {
+    border-bottom: 1px solid black;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--textcolor-primary);
+    font-size: 20px;
+    transition: color 1s, font-size 1s;
+    padding: 25px;
+}
+
+nav a:hover {
+    color: var(--textcolor-secondary);
+    font-size: 25px;
+}
+
+nav .active {
+    color: var(--textcolor-secondary);
+}
+/* NAVBAR ASETUKSIA - LOPPUU */
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    nav a {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    nav a {
+        padding: 10px;
+    }
+}
