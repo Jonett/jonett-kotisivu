@@ -6,6 +6,10 @@ body {
 :root {
     --textcolor-primary: black;
     --textcolor-secondary: red;
+    --backgroundcolor-primary: white;
+    --backgroundcolor-secondary: black;
+    /* TODO: kun siirrytään jonkun näköiseen webbi palvelin ympäristöön niin korjataan kuvien osoitteet... */
+    --banner-img: url("/public_html/ui/assets/jonett-banner.png");
 }
 
 .overline {
@@ -18,9 +22,15 @@ body {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    z-index: 1337;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid black;
 }
 
 nav a {
@@ -42,20 +52,61 @@ nav .active {
 }
 /* NAVBAR ASETUKSIA - LOPPUU */
 
+/* Pääsisätöalueen asetuksia */
+
+main {
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* Pääsisätöalueen osioiden asetuksia */
+main>section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+section#hero {
+    width: 100%;
+    background: var(--banner-img);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    min-height: 250px;
+    background-color: var(--backgroundcolor-secondary);
+}
+
+/* Pääsisätöalueen asetuksia - LOPPUU */
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 1000px) {
     nav {
         flex-direction: column;
     }
+    main {
+        margin-top: 130px;
+    }
+    nav a {
+        padding: 10px;
+    }
+    section#hero {
+        min-height: 150px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
-    nav a {
-        padding: 20px;
+    section#hero {
+        min-height: 100px;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    nav a {
-        padding: 10px;
+    section#hero {
+        min-height: 80px;
     }
 }
