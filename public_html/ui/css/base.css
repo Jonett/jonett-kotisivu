@@ -1,15 +1,23 @@
-body {
-    width: 100%;
-    margin: 0;
-}
+@import url('roboto-font.css');
 
 :root {
     --textcolor-primary: black;
     --textcolor-secondary: red;
+    --textcolor-disabled: grey;
     --backgroundcolor-primary: white;
+    --backgroundcolor-primary-50: rgb(255 255 255 / 80%);
     --backgroundcolor-secondary: black;
-    /* TODO: kun siirrytään jonkun näköiseen webbi palvelin ympäristöön niin korjataan kuvien osoitteet... */
-    --banner-img: url("/public_html/ui/assets/jonett-banner.png");
+    --banner-img: url("../assets/jonett-banner.png");
+    --home-img: url("../assets/home.png");
+    --projects-img: url("../assets/projects.png");
+    --contact-img: url("../assets/email.png");
+    --font-primary: 'Roboto Condensed', serif;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: var(--font-primary);
 }
 
 .overline {
@@ -42,7 +50,12 @@ nav a {
     padding: 25px;
 }
 
-nav a:hover {
+a.disabled {
+    color: var(--textcolor-disabled) !important;
+    pointer-events: none;
+}
+
+nav a:hover:not(.disabled) {
     color: var(--textcolor-secondary);
     font-size: 25px;
 }
@@ -50,22 +63,44 @@ nav a:hover {
 nav .active {
     color: var(--textcolor-secondary);
 }
+
+#home-icon {
+    background-image: var(--home-img);
+}
+#projects-icon {
+    background-image: var(--projects-img);
+}
+#email-icon {
+    background-image: var(--contact-img);
+}
+
+.nav-icon {
+    position: relative;
+    top: 3px;
+    max-height: 20px;
+    margin-right: 3px;
+}
+
 /* NAVBAR ASETUKSIA - LOPPUU */
 
 /* Pääsisätöalueen asetuksia */
-
 main {
     margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 /* Pääsisätöalueen osioiden asetuksia */
 main>section {
     padding-left: 20px;
     padding-right: 20px;
 }
+
 section#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     background: var(--banner-img);
     background-repeat: no-repeat;
@@ -75,14 +110,27 @@ section#hero {
     background-color: var(--backgroundcolor-secondary);
 }
 
+section#selection {
+    width: 100%;
+    display: flex;
+}
+
 /* Pääsisätöalueen asetuksia - LOPPUU */
 
+/* Sisältöalueiden asetuksia */
+#title {
+    background-color: var(--backgroundcolor-primary-50);
+    padding: 10px;
+    border-radius: 4px;
+    text-shadow: 2px 1px 6px #00000059;
+    font-size: 20px;
+}
 
+.col-3 {
+    width: 33.33%;
+}
 
-
-
-
-
+/* Sisältöalueiden asetuksia - LOPPUU */
 
 @media only screen and (max-width: 1000px) {
     nav {
@@ -103,10 +151,20 @@ section#hero {
     section#hero {
         min-height: 100px;
     }
+    section#selection {
+        flex-wrap: wrap;
+    }
+    .col-3 {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 400px) {
     section#hero {
         min-height: 80px;
     }
+    .col-3 {
+        width: 100%;
+    }
+    #title {}
 }

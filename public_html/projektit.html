@@ -10,18 +10,19 @@
 <header>
     <section id="navbar">
         <nav>
-            <a href="index.html">Etusivu</a>
-            <a class="active" href="projektit.html">Omat projektit</a>
-            <a href="#">Ota yhteyttä</a>
+            <a href="index.html"><img src="ui/assets/home.png" alt="icon credits: https://www.flaticon.com/authors/dave-gandy" class="nav-icon">Etusivu</a>
+            <a class="active" href="projektit.html"><img src="ui/assets/projects.png" alt="icon credits: https://www.flaticon.com/authors/nur-syifa-fauziah" class="nav-icon">Omat projektit</a>
+            <a href="#" class="disabled"><img src="ui/assets/email.png" title="icon credits: https://www.freepik.com/" class="nav-icon">Ota yhteyttä</a>
         </nav>
     </section>
 </header>
 <main>
     <section id="hero">
+        <h1 id="title">MUN PROJEKTIEN HISTORIAA 🐛</h1>
     </section>
-    <section id="kotisivu-projekti">
-        <h2>Omat responsiivisesti toimivat yksinkertaiset kotisivut ilman kirjastoja</h2>
-        <h4>06.07.2024 (xh) 1x☕</h4>
+    <section class="project">
+        <h2>Responsiivisesti toimivat ja yksinkertaiset kotisivut jotka toteutettu ilman kirjastoja</h2>
+        <h4>06.07.2024 (2,5h) 1x☕</h4>
         <p>Navi elementin tekoa</p>
         <ul>
             <li>Navi elementti seuraa mukana kun sivua scrollataan</li>
@@ -32,9 +33,12 @@
             <li>Reunoille tilaa ettei sisällöt kirraa kiinni selaimen reunoihin</li>
             <li>Flexatut pääsisöltäalueen osiot</li>
             <li>Sivuille <a href="#hero">#hero</a> elementti taustakuva</li>
+            <li>Sivustolle fontti Roboto Condensed, V*T*N fontit ja niiden kanssa tappelu kun tarvii harvoin ladata niitä käytettäväksi... Lähes aina google fonts import plx. Noh... nyt toimii 💩 </li>
+            <li><code>.col-3</code> elementti käytettäväksi flexien kanssa (widht 33.33%) ja break pointeille katkasut</li>
+            <li>Naviin iconit home, projects, contact</li>
         </ul>
         <hr>
-        <div>
+
             <h4>14.06.2024 (2h) 1x☕</h4>
             <p>Pohjan rakennusta</p>
             <ul>
@@ -53,15 +57,15 @@
             </ul>
             <p>Fiilis: Projekti aloitettu, fiilis hyvä. Hieman haasteita css kanssa kun ei ollut sitä ihan pelkällään tehnyt pitkään aikaan. Uskoisin että sivusto valmistuu joko kesän 2024 tai 2024
                 aikana 🤷‍♂️.</p>
-        </div>
+
         <hr>
         <h4>TODO: (tämä lista kasvaa sitä menoa kun hommat jää tekemättä / keksin mitä tarvii vielä tehdä)</h4>
-        <div>
+
             <ul>
                 <li class="overline">Pohjan rakennus (Kansiot ja pohjatiedostot)</li>
                 <li class="overline">V1 Navi elementin suunnittelu ja toteutus</li>
                 <li class="overline">Navibarin mukana raahaus kun liikutaan sivuilla.</li>
-                <li>Sisällön käsikirjoitus ja graafinen (most likely paint.exe yms. 🤷‍♂️) versio ulkoasusta</li>
+                <li class="overline">Sisällön käsikirjoitus ja graafinen (most likely paint.exe yms. 🤷‍♂️) versio ulkoasusta</li>
                 <li>Käytettävien elementtien suunnittelu</li>
                 <li>Käytettävien elementtien toteutus</li>
                 <li>Yleisen responsiivisuuden suunnittelu</li>
@@ -74,7 +78,8 @@
                 <li>cpanel yml tiedosto</li>
                 <li>Docker?</li>
             </ul>
-        </div>
+        https://www.flaticon.com/authors/nur-syifa-fauziah
+        https://www.flaticon.com/authors/dave-gandy
     </section>
 </main>
 <footer></footer>
